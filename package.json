@@ -1,7 +1,7 @@
 {
   "name": "@mktcode/boost",
   "scripts": {
-    "ui:publish": "cd ui; vue-tsc --noEmit && vite build --base=/boost/ && push-dir --dir=dist --branch=gh-pages",
+    "ui:publish": "vue-tsc --noEmit -p ./ui/tsconfig.json && vite build --base=/boost/ && push-dir --dir=ui/dist --branch=gh-pages",
     "test:e2e": "start-server-and-test test:e2e:serve http://localhost:8081 test:e2e:run",
     "test:e2e:debug": "start-server-and-test test:e2e:serve http://localhost:8081 test:e2e:open",
     "test:e2e:serve": "cd ui; vite build && npx http-server dist -p 8081",
