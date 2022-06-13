@@ -5,9 +5,8 @@
     "strict": true,
     "esModuleInterop": true,
     "outDir": "dist",
-    "declaration": true,
-    "types": ["cypress", "node"]
+    "declaration": true
   },
-  "include": ["./scripts", "./test", "./typechain", "./ui"],
+  "include": ["./scripts", "./test", "./typechain"],
   "files": ["./hardhat.config.ts"]
 }
