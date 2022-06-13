@@ -1,4 +1,5 @@
 import * as dotenv from "dotenv";
+import { e2e } from "./package.json";
 
 import { HardhatUserConfig, task } from "hardhat/config";
 import "@nomiclabs/hardhat-etherscan";
@@ -25,6 +26,17 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 const config: HardhatUserConfig = {
   solidity: "0.8.4",
   networks: {
+    hardhat: {
+      forking: {
+        url: "https://cloudflare-eth.com/v1/mainnet"
+      },
+      accounts: [
+        {
+          privateKey: e2e.pk,
+          balance: "100000000000000000000",
+        }
+      ]
+    },
     ropsten: {
       url: process.env.ROPSTEN_URL || "",
       accounts:

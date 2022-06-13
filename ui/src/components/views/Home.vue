@@ -6,7 +6,8 @@ import { computed, reactive, ref, watch } from 'vue';
 
 import { CheckIcon, InformationCircleIcon, DownloadIcon, UserGroupIcon } from '@heroicons/vue/outline'
 
-const { connect } = useWeb3()
+const { connect, account } = useWeb3()
+connect()
 
 const voters = ref([
   { id: 1, adddress: '0xd50cc74fad36ea02c2ede0207434db476884104b', vp: 1.4 },
@@ -108,6 +109,7 @@ const createBoost = async () => {
 
 <template>
   <Layout>
+    <div data-testid="accountDisplay">{{ account }}</div>
     <div class="bg-white rounded-xl p-2 max-w-sm">
       <BaseInput label="Proposal URL" placeholder="https://snapshot.org/..." type="text" v-model="proposalUrl" />
       <div v-if="proposal" class="space-y-2 mt-2">
