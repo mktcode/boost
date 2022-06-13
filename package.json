@@ -3,9 +3,10 @@
   "scripts": {
     "ui:dev": "vite --port=8080",
     "ui:publish": "vue-tsc --noEmit -p ./ui/tsconfig.json && vite build --base=/boost/ && push-dir --dir=ui/dist --branch=gh-pages",
-    "test:e2e": "start-server-and-test test:e2e:serve http://localhost:8081 test:e2e:run",
-    "test:e2e:debug": "start-server-and-test test:e2e:serve http://localhost:8081 test:e2e:open",
+    "test:e2e": "VITE_E2E=1 start-server-and-test test:e2e:mainnet http://localhost:8545 test:e2e:serve http://localhost:8081 test:e2e:run",
+    "test:e2e:debug": "VITE_E2E=1 start-server-and-test test:e2e:mainnet http://localhost:8545 test:e2e:serve http://localhost:8081 test:e2e:open",
     "test:e2e:serve": "vite build && npx http-server ui/dist -p 8081",
+    "test:e2e:mainnet": "npx hardhat node --fork https://cloudflare-eth.com/v1/mainnet",
     "test:e2e:run": "cypress run",
     "test:e2e:open": "cypress open",
     "lint": "eslint \"./src/*/**/*.{js,ts,vue,json}\" --fix"

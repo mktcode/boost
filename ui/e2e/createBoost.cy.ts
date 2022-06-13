@@ -1,5 +1,5 @@
 describe('empty spec', () => {
-  it('passes', async () => {
+  it('passes', () => {
     cy.visit('/');
   })
 })
