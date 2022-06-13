@@ -4,6 +4,9 @@ coverage
 coverage.json
 typechain
 
-#Hardhat files
+# Vite
+ui/dist
+
+# Hardhat
 cache
 artifacts
