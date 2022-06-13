@@ -1,0 +1,4 @@
+[
+  "function approve(address spender, uint256 amount)",
+  "function allowance(address owner, address spender) external view returns (uint256)"
+]

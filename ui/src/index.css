@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-amber-500;
+  font-family: 'Zilla Slab', serif;
+}
+
+h1 {
+  @apply font-bold text-4xl;
+}
+
+h2 {
+  @apply font-bold text-2xl opacity-40;
+}
+
+.btn {
+  @apply bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-xl disabled:bg-gray-300 outline-none w-full;
+}
+
+.btn.secondary {
+  @apply bg-gray-200 hover:bg-gray-300 text-gray-900 disabled:bg-gray-200 disabled:text-gray-400;
+}
+.btn.circle {
+  @apply w-12 h-12 p-3 flex justify-center items-center rounded-full;
+}
+
+.input {
+  @apply px-3 pb-2 pt-8 bg-gray-100 hover:bg-gray-50 focus-visible:bg-white rounded-xl outline-none w-full text-2xl font-semibold placeholder:text-gray-200 focus-visible:outline-none focus-visible:shadow-inner transition-all;
+}
+
+.input[readonly] {
+  @apply bg-transparent text-gray-500 focus-visible:shadow-none;
+}
+
+.label {
+  @apply absolute ml-3 mt-1 text-gray-400 font-bold;
+}
+
+.router-link-exact-active {
+  @apply opacity-100;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
